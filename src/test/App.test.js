@@ -9,4 +9,8 @@ describe("App component", () => {
   it("Should have the application title", () => {
     expect(wrapper.find("h1").text()).toEqual(constants.APPLICATION_TITLE);
   });
+
+  it("Should render the StandardClock component", () => {
+    expect(wrapper.find("StandardClock").length).toEqual(1);
+  });
 });
