@@ -12,10 +12,16 @@ function App() {
 
   const startClock = date => {
     const h = date.getHours();
-    const m = date.getMinutes();
-    const s = date.getSeconds();
+    const m = formatMinutesOrSeconds(date.getMinutes());
+    const s = formatMinutesOrSeconds(date.getSeconds());
 
     return `${h}:${m}:${s}`;
+  };
+
+  const formatMinutesOrSeconds = minutesOrSeconds => {
+    return minutesOrSeconds < 10
+      ? `0${minutesOrSeconds}`
+      : `${minutesOrSeconds}`;
   };
 
   return (
