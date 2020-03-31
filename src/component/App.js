@@ -4,7 +4,7 @@ import BerlinClock from "./BerlinClock";
 import constants from "../constant";
 import "./App.css";
 
-function App() {
+const App = () => {
   const [time, setTime] = useState("");
 
   useEffect(() => {
@@ -34,6 +34,6 @@ function App() {
       <StandardClock time={time} />
     </div>
   );
-}
+};
 
 export default App;
