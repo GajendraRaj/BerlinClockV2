@@ -3,7 +3,9 @@ const constants = {
   EVEN: "E",
   ODD: "O",
   EVEN_STYLE_CLASS: "bg-yellow",
-  ODD_STYLE_CLASS: "bg-silver"
+  ODD_STYLE_CLASS: "bg-silver",
+  HOUR_LAMP: "H",
+  RED_STYLE_CLASS: "bg-red"
 };
 
 export default constants;

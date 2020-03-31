@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import constants from "../constant";
 import Seconds from "./Seconds";
+import Hours from "./Hours";
 
 const BerlinClock = props => {
   const berlinFormat = time => {
@@ -9,13 +10,21 @@ const BerlinClock = props => {
       .split(":")
       .map(number => parseInt(number));
     const secondValue = seconds % 2 === 0 ? constants.EVEN : constants.ODD;
+    const hoursUpperRow =
+      constants.HOUR_LAMP.repeat(hours / 5) +
+      constants.ODD.repeat(4 - parseInt(hours / 5));
+    const hoursLowerRow =
+      constants.HOUR_LAMP.repeat(hours % 5) +
+      constants.ODD.repeat(4 - (hours % 5));
+    const hoursValue = [hoursUpperRow, hoursLowerRow];
 
-    return { secondValue };
+    return { secondValue, hoursValue };
   };
 
   return (
     <div className="clock mv4">
       <Seconds seconds={berlinFormat(props.time).secondValue} />
+      <Hours hours={berlinFormat(props.time).hoursValue} />
     </div>
   );
 };
