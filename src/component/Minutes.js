@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import constants from "../constant";
 
-function Minutes(props) {
+const Minutes = props => {
   const minuteColor = minute =>
     minute === constants.MINUTE_LAMP
       ? constants.EVEN_STYLE_CLASS
@@ -18,7 +18,7 @@ function Minutes(props) {
                 key={idx}
                 className={`hours-rows ${minuteColor(m)}`}
                 style={{
-                  width: i === 0 ? "calc(100% / 11)" : "calc(100% / 4)"
+                  width: i === 0 ? "9%" : "25%"
                 }}
               />
             ))}
@@ -26,7 +26,7 @@ function Minutes(props) {
       ))}
     </div>
   );
-}
+};
 
 Minutes.propTypes = {
   minutes: PropTypes.array.isRequired
