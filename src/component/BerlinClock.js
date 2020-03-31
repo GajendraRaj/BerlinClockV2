@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import constants from "../constant";
 
 const BerlinClock = props => {
   const berlinFormat = time => {
     const [hours, minutes, seconds] = time
       .split(":")
       .map(number => parseInt(number));
-    const secondValue = seconds % 2 === 0 ? "E" : "O";
+    const secondValue = seconds % 2 === 0 ? constants.EVEN : constants.ODD;
 
     return { secondValue };
   };
