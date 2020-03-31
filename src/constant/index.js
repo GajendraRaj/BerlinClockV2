@@ -5,7 +5,8 @@ const constants = {
   EVEN_STYLE_CLASS: "bg-yellow",
   ODD_STYLE_CLASS: "bg-silver",
   HOUR_LAMP: "H",
-  RED_STYLE_CLASS: "bg-red"
+  RED_STYLE_CLASS: "bg-red",
+  MINUTE_LAMP: "M"
 };
 
 export default constants;
