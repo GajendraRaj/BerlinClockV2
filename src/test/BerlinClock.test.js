@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import BerlinClock from "../component/BerlinClock";
 import checkPropTypes from "check-prop-types";
 import constants from "../constant";
@@ -21,6 +21,18 @@ describe("BerlinClock component", () => {
     const wrapper = shallow(<BerlinClock time={"15:33:13"} />);
     const secondsWrapper = wrapper.find(Seconds);
     expect(secondsWrapper.props().seconds).toEqual(constants.ODD);
+  });
+
+  it("Should top lamp illuminated on with even second value", () => {
+    const wrapper = mount(<BerlinClock time={"15:33:12"} />);
+    const secondsWrapper = wrapper.find(Seconds);
+    expect(secondsWrapper.find(".bg-yellow")).toHaveLength(1);
+  });
+
+  it("Should top lamp illuminated off with odd second value", () => {
+    const wrapper = mount(<BerlinClock time={"15:33:13"} />);
+    const secondsWrapper = wrapper.find(Seconds);
+    expect(secondsWrapper.find(".bg-silver")).toHaveLength(1);
   });
 
   it("Should throw error message if there is no time prop", () => {

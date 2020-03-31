@@ -8,7 +8,9 @@ function App() {
   const [time, setTime] = useState("");
 
   useEffect(() => {
-    setTime(startClock(new Date()));
+    setInterval(() => {
+      setTime(startClock(new Date()));
+    }, 1000);
   });
 
   const startClock = date => {
