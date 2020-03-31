@@ -19,7 +19,7 @@ const Hours = props => {
                 <div
                   key={idx}
                   className={`hours-rows ${hourColor(h)}`}
-                  style={{ width: "calc(100% / 4)" }}
+                  style={{ width: "25%" }}
                 />
               ))}
         </div>
