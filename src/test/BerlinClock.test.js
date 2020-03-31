@@ -42,9 +42,9 @@ describe("BerlinClock component", () => {
     expect(hoursWrapper.props().hours).toEqual(["HHHO", "OOOO"]);
   });
 
-  it("Should display the minutes prop value as ['MMMMMMOOOOO'] for minutes upper row in minutes component", () => {
+  it("Should display the minutes prop value as ['MMMMMMOOOOO', 'MMMO'] in minutes component", () => {
     const minutesWrapper = wrapper.find(Minutes);
-    expect(minutesWrapper.props().minutes).toEqual(["MMMMMMOOOOO"]);
+    expect(minutesWrapper.props().minutes).toEqual(["MMMMMMOOOOO", "MMMO"]);
   });
 
   it("Should throw error message if there is no time prop", () => {

@@ -21,7 +21,10 @@ const BerlinClock = props => {
     const minutesUpperRow =
       constants.MINUTE_LAMP.repeat(minutes / 5) +
       constants.ODD.repeat(11 - parseInt(minutes / 5));
-    const minutesValue = [minutesUpperRow];
+    const minutesLowerRow =
+      constants.MINUTE_LAMP.repeat(minutes % 5) +
+      constants.ODD.repeat(4 - (minutes % 5));
+    const minutesValue = [minutesUpperRow, minutesLowerRow];
 
     return { secondValue, hoursValue, minutesValue };
   };
